@@ -11,7 +11,7 @@ const __dirname = dirname(__filename);
 
 var obj = JSON.parse(fs.readFileSync(__dirname + '/csvjson.json', 'utf8'));
 
-export const RARITYCAPY_COMMAND = {
+const RARITYCAPY_COMMAND = {
   name: "rarity",
   description: "check the raity rank of your capy",
   options: [
