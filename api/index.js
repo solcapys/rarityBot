@@ -74,7 +74,7 @@ module.exports = async (request, response) => {
             salida = "not found";
         }
         else{
-            salida = `capy rank ${(found+1)}`;
+            salida = `capy ${message.data.options[0].value} rank ${(found+1)}/3333`;
         }
 
           response.status(200).send({
