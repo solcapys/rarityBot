@@ -1,9 +1,23 @@
 import fastify from "fastify";
 import rawBody from 'fastify-raw-body';
 import { InteractionResponseType, InteractionType,verifyKey, } from "discord-interactions";
-import { RARITYCAPY_COMMAND} from './api/commands.js';
 import fs from 'fs';
 var obj = JSON.parse(fs.readFileSync('csvjson.json', 'utf8'));
+
+export const RARITYCAPY_COMMAND = {
+  name: "rarity",
+  description: "check the raity rank of your capy",
+  options: [
+    {
+      name: "raritycapys",
+      description: "The capy to check",
+      type: 3,
+      required: true,
+    },
+  ],
+};
+
+
 
 const INVITE_URL = `https://discord.com/oauth2/authorize?client_id=${process.env.APPLICATION_ID}&scope=applications.commands`;
 
