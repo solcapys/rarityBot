@@ -6,13 +6,9 @@ const {
 const getRawBody = require('raw-body');
 import fs from 'fs';
 
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+const path = require("path");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-var obj = JSON.parse(fs.readFileSync(__dirname + '/csvjson.json', 'utf8'));
+var obj = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../csvjson.json', 'utf8'));
 
 const RARITYCAPY_COMMAND = {
   name: "rarity",
