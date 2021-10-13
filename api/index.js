@@ -4,7 +4,6 @@ const {
   verifyKey,
 } = require('discord-interactions');
 const getRawBody = require('raw-body');
-
 import fs from 'fs';
 
 import { fileURLToPath } from 'url';

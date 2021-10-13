@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "rarity bot for solcapys",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "register": "node -r dotenv/config register.js",
     "start": "node -r dotenv/config ./api/index.js"
