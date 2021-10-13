@@ -9,7 +9,7 @@ var fs = require('fs');
 
 const path = require("path");
 
-var obj = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../csvjson.json'), 'utf8'));
+var obj = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../csv_full_traits.json'), 'utf8'));
 var found = 0; 
 
 const RARITYCAPY_COMMAND = {
@@ -74,7 +74,8 @@ module.exports = async (request, response) => {
             salida = "not found";
         }
         else{
-            salida = `capy ${message.data.options[0].value} rank ${(found+1)}/3333`;
+            salida = `capy ${message.data.options[0].value} rank ${(found+1)}/3333\n
+                      background:${obj[found].background}`;
         }
 
           response.status(200).send({
