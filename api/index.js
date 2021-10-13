@@ -10,7 +10,7 @@ var fs = require('fs');
 const path = require("path");
 
 var obj = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../csvjson.json'), 'utf8'));
-
+var found = 0; 
 
 const RARITYCAPY_COMMAND = {
   name: "rarity",
@@ -65,10 +65,22 @@ module.exports = async (request, response) => {
       // Handle our Slash Commands
       switch (message.data.name.toLowerCase()) {
         case RARITYCAPY_COMMAND.name.toLowerCase():
+
+        found = obj.findIndex(element => element.capy == `capys ${message.data.options[0].value}`);
+
+        var salida='';
+        if(found<0)
+        {
+            salida = "not found";
+        }
+        else{
+            salida = `capy rank ${(found+1)}`;
+        }
+
           response.status(200).send({
             type: 4,
             data: {
-              content: "Hello!",
+              content: salida,
             },
           });
           console.log("Slap Request");
