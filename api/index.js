@@ -3,9 +3,13 @@ import rawBody from 'fastify-raw-body';
 import { InteractionResponseType, InteractionType,verifyKey, } from "discord-interactions";
 import fs from 'fs';
 
-const {pathname: root} = new URL('../csvjson.json', import.meta.url)
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-var obj = JSON.parse(fs.readFileSync(path.resolve(pathname, '../csvjson.json'), 'utf8'));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+var obj = JSON.parse(fs.readFileSync(__dirname + '/csvjson.json', 'utf8'));
 
 export const RARITYCAPY_COMMAND = {
   name: "rarity",
