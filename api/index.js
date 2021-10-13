@@ -103,11 +103,4 @@ server.post("/", async (request, response) => {
   }
 });
 
-server.listen(3000, async (error, address) => {
-  if (error) {
-    server.log.error(error);
-    process.exit(1);
-  }
-  server.log.info(`server listening on ${address}`);
-});
 
