@@ -5,6 +5,13 @@ const {
 } = require("discord-interactions");
 const getRawBody = require("raw-body");
 
+var fs = require('fs');
+
+const path = require("path");
+
+var obj = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../csvjson.json'), 'utf8'));
+
+
 const RARITYCAPY_COMMAND = {
   name: "rarity",
   description: "check the raity rank of your capy",
