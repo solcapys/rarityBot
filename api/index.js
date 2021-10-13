@@ -59,7 +59,7 @@ module.exports = async (request, response) => {
       type: InteractionResponseType.PONG,
     });
 
-} else if (message.type === InteractionType.APPLICATION_COMMAND) {
+    } else if (message.type === InteractionType.APPLICATION_COMMAND) {
     console.log(message.data.name.toLowerCase());
     switch (message.data.name.toLowerCase()) {
       case RARITYCAPY_COMMAND.name.toLowerCase():
@@ -93,6 +93,6 @@ module.exports = async (request, response) => {
     server.log.error("Unknown Type");
     response.status(400).send({ error: "Unknown Type" });
   }
-});
+);
 
 
