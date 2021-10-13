@@ -2,7 +2,7 @@ import fastify from "fastify";
 import rawBody from 'fastify-raw-body';
 import { InteractionResponseType, InteractionType,verifyKey, } from "discord-interactions";
 import fs from 'fs';
-const path = require("path");
+import path from 'path';
 
 var obj = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../csvjson.json'), 'utf8'));
 
