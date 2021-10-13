@@ -75,15 +75,15 @@ module.exports = async (request, response) => {
         }
         else{
             salida = `capy ${message.data.options[0].value} rank ${(found+1)}/3333\n
-                      background:${obj[found].background} count:${obj[found].background_count} ${obj[found].background_percentage}%\n
-                      boca:${obj[found].boca} count:${obj[found].boca_count} ${obj[found].boca_percentage}%\n
-                      cig:${obj[found].cig} count:${obj[found].cig_count} ${obj[found].cig_percentage}%\n
-                      cuerpo:${obj[found].cuerpo} count:${obj[found].cuerpo_count} ${obj[found].cuerpo_percentage}%\n
-                      ear:${obj[found].ear} count:${obj[found].ear_count} ${obj[found].ear_percentage}%\n
-                      gorro:${obj[found].gorro} count:${obj[found].gorro_count} ${obj[found].gorro_percentage}%\n
-                      lentes:${obj[found].lentes} count:${obj[found].lentes_count} ${obj[found].lentes_percentage}%\n
-                      ojos:${obj[found].ojos} count:${obj[found].ojos_count} ${obj[found].ojos_percentage}%\n
-                      ropa:${obj[found].ropa} count:${obj[found].ropa_count} ${obj[found].ropa_percentage}%\n`;
+                      background:${obj[found].background} count:${obj[found].background_count} (${obj[found].background_percentage}%)\n
+                      boca:${obj[found].boca} count:${obj[found].boca_count} (${obj[found].boca_percentage}%)\n
+                      cig:${obj[found].cig} count:${obj[found].cig_count} (${obj[found].cig_percentage}%)\n
+                      cuerpo:${obj[found].cuerpo} count:${obj[found].cuerpo_count} (${obj[found].cuerpo_percentage}%)\n
+                      ear:${obj[found].ear} count:${obj[found].ear_count} (${obj[found].ear_percentage}%)\n
+                      gorro:${obj[found].gorro} count:${obj[found].gorro_count} (${obj[found].gorro_percentage}%)\n
+                      lentes:${obj[found].lentes} count:${obj[found].lentes_count} (${obj[found].lentes_percentage}%)\n
+                      ojos:${obj[found].ojos} count:${obj[found].ojos_count} (${obj[found].ojos_percentage}%)\n
+                      ropa:${obj[found].ropa} count:${obj[found].ropa_count} (${obj[found].ropa_percentage}%)\n`;
         }
 
           response.status(200).send({
