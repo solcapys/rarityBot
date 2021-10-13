@@ -2,7 +2,7 @@ import fastify from "fastify";
 import rawBody from 'fastify-raw-body';
 import { InteractionResponseType, InteractionType,verifyKey, } from "discord-interactions";
 import fs from 'fs';
-var obj = JSON.parse(fs.readFileSync('csvjson.json', 'utf8'));
+var obj = JSON.parse(fs.readFileSync('./api/csvjson.json', 'utf8'));
 
 export const RARITYCAPY_COMMAND = {
   name: "rarity",
