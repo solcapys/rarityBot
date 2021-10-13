@@ -1,6 +1,10 @@
-import fastify from "fastify";
-import rawBody from 'fastify-raw-body';
-import { InteractionResponseType, InteractionType,verifyKey, } from "discord-interactions";
+const {
+  InteractionResponseType,
+  InteractionType,
+  verifyKey,
+} = require('discord-interactions');
+const getRawBody = require('raw-body');
+
 import fs from 'fs';
 
 import { fileURLToPath } from 'url';
