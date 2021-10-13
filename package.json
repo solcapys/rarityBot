@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "register": "node -r dotenv/config register.js",
-    "start": "node -r dotenv/config server.js"
+    "start": "node -r dotenv/config ./api/index.js"
   },
   "repository": {
     "type": "git",
