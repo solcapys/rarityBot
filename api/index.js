@@ -4,7 +4,7 @@ const {
   verifyKey,
 } = require('discord-interactions');
 const getRawBody = require('raw-body');
-import fs from 'fs';
+var fs = require('fs');
 
 const path = require("path");
 
