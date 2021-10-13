@@ -8,7 +8,7 @@ var fs = require('fs');
 
 const path = require("path");
 
-var obj = JSON.parse(fs.readFileSync(path.resolve(__dirname, '/csvjson.json'), 'utf8'));
+var obj = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../csvjson.json'), 'utf8'));
 
 const RARITYCAPY_COMMAND = {
   name: "rarity",
