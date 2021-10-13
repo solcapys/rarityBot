@@ -66,7 +66,7 @@ module.exports = async (request, response) => {
       switch (message.data.name.toLowerCase()) {
         case RARITYCAPY_COMMAND.name.toLowerCase():
 
-        found = obj.findIndex(element => element.capys == `capys ${message.data.options[0].value}`);
+        found = obj.findIndex(element => element.Capys == `capys ${message.data.options[0].value}`);
 
         var salida='';
         if(found<0)
