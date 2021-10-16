@@ -3,7 +3,7 @@ const {
   InteractionType,
   verifyKey,
 } = require("discord-interactions");
-const { MessageEmbed } = require('discord.js');
+const { Client, CategoryChannel, MessageEmbed } = require("discord.js")
 const getRawBody = require("raw-body");
 
 var fs = require('fs');
@@ -83,7 +83,7 @@ module.exports = async (request, response) => {
         }
         else{     
 
-            const exampleEmbed = new MessageEmbed.Message.Embed()
+            const exampleEmbed = new Discord.MessageEmbed()
                 .setColor('#0099ff')
                 .setTitle(`capy ${message.data.options[0].value} Rank ${(found+1)}/3333`)
                 .addFields(
