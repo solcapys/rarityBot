@@ -26,6 +26,6 @@
     "fastify": "^3.22.0",
     "fastify-raw-body": "^3.1.0",
     "node-fetch": "^3.0.0",
-    "discord.js": "^13.2.0"
+    "discord.js": "12.3.1"
   }
 }
