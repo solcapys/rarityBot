@@ -11,7 +11,7 @@ client.on('ready', () => {
   console.log('I am ready!');
 });
 
-client.login(process.env.TOKEN);
+
 
 var fs = require('fs');
 
@@ -119,18 +119,9 @@ module.exports = async (request, response) => {
                 // Set the main content of the embed
                 .setDescription('Hello, this is a slick embed!');
               // Send the embed to the same channel as the message
-              //message.channel.send(embed);
-
-              response.status(200).send({
-                type: 4,
-                data: {
-                  content: embed,
-                },
-              });
+              message.channel.send(embed);
                 
           });
-
-          
 
           }
           console.log("Rarity Request");
@@ -146,5 +137,7 @@ module.exports = async (request, response) => {
     }
   }
 };
+
+client.login(process.env.TOKEN);
 
 
