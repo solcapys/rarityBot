@@ -3,6 +3,7 @@ const {
   InteractionType,
   verifyKey,
 } = require("discord-interactions");
+const { MessageEmbed } = require('discord.js');
 const getRawBody = require("raw-body");
 
 var fs = require('fs');
@@ -72,18 +73,36 @@ module.exports = async (request, response) => {
         if(found<0)
         {
             salida = "not found";
-        }
-        else{
-            salida = `capy ${message.data.options[0].value} rank ${(found+1)}/3333\nbackground:${obj[found].background} count:${obj[found].background_count} (${obj[found].background_percentage}%)\nboca:${obj[found].boca} count:${obj[found].boca_count} (${obj[found].boca_percentage}%)\ncig:${obj[found].cig} count:${obj[found].cig_count} (${obj[found].cig_percentage}%)\ncuerpo:${obj[found].cuerpo} count:${obj[found].cuerpo_count} (${obj[found].cuerpo_percentage}%)\near:${obj[found].ear} count:${obj[found].ear_count} (${obj[found].ear_percentage}%)\ngorro:${obj[found].gorro} count:${obj[found].gorro_count} (${obj[found].gorro_percentage}%)\nlentes:${obj[found].lentes} count:${obj[found].lentes_count} (${obj[found].lentes_percentage}%)\nojos:${obj[found].ojos} count:${obj[found].ojos_count} (${obj[found].ojos_percentage}%)\nropa:${obj[found].ropa} count:${obj[found].ropa_count} (${obj[found].ropa_percentage}%)\n`;
-        }
 
-          response.status(200).send({
-            type: 4,
-            data: {
-              content: salida,
-            },
-          });
-          console.log("Slap Request");
+            response.status(200).send({
+              type: 4,
+              data: {
+                content: salida,
+              },
+            });
+        }
+        else{     
+
+            const exampleEmbed = new MessageEmbed()
+                .setColor('#0099ff')
+                .setTitle(`capy ${message.data.options[0].value} Rank ${(found+1)}/3333`)
+                .addFields(
+                { name: `boca:${obj[found].boca}`, value:  `count:${obj[found].boca_count} (${obj[found].boca_percentage}%)`, inline: true },
+                { name: `cig:${obj[found].cig}`, value: `count:${obj[found].cig_count} (${obj[found].cig_percentage}%)`, inline: true },
+                { name: `cuerpo:${obj[found].cuerpo}`,value: `count:${obj[found].cuerpo_count} (${obj[found].cuerpo_percentage}%)`, inline: true },
+                { name: `ear:${obj[found].ear}`, value: `count:${obj[found].ear_count} (${obj[found].ear_percentage}%)`, inline: true },
+                { name: `gorro:${obj[found].gorro}`, value: `count:${obj[found].gorro_count} (${obj[found].gorro_percentage}%)`, inline: true },
+                { name: `lentes:${obj[found].lentes}`, value: `count:${obj[found].lentes_count} (${obj[found].lentes_percentage}%)`, inline: true },
+                { name: `ojos:${obj[found].ojos}`, value:  `count:${obj[found].ojos_count} (${obj[found].ojos_percentage}%)`, inline: true },
+                { name: `ropa:${obj[found].ropa}`, value: `count:${obj[found].ropa_count} (${obj[found].ropa_percentage}%)`, inline: true },
+                )
+              //  .setImage('https://i.imgur.com/AfFp7pu.png')
+                .setTimestamp()
+                .setFooter('by Luis Mata');
+
+          channel.send({ embeds: [exampleEmbed] });       
+          }
+          console.log("Rarity Request");
           break;
         default:
           console.error("Unknown Command");
