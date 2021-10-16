@@ -119,7 +119,7 @@ module.exports = async (request, response) => {
                 // Set the main content of the embed
                 .setDescription('Hello, this is a slick embed!');
               // Send the embed to the same channel as the message
-              message.channel.send(embed);
+              //message.channel.send(embed);
 
               response.status(200).send({
                 type: 4,
