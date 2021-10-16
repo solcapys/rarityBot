@@ -5,12 +5,6 @@ const {
 } = require("discord-interactions");
 const { Client, CategoryChannel, MessageEmbed } = require("discord.js")
 const getRawBody = require("raw-body");
-const client = new Client();
-
-client.on('ready', () => {
-  console.log('I am ready!');
-});
-
 
 
 var fs = require('fs');
@@ -118,9 +112,14 @@ module.exports = async (request, response) => {
                 .setColor(0xff0000)
                 // Set the main content of the embed
                 .setDescription('Hello, this is a slick embed!');
-              // Send the embed to the same channel as the message
-              message.channel.send(embed);
-                
+              // Send the embed to the same channel as the message  
+              
+              response.status(200).send({
+                type: 4,
+                data: {
+                  content: embed,
+                },
+              });
           });
 
           }
@@ -137,7 +136,5 @@ module.exports = async (request, response) => {
     }
   }
 };
-
-client.login(process.env.TOKEN);
 
 
