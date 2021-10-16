@@ -11,6 +11,8 @@ client.on('ready', () => {
   console.log('I am ready!');
 });
 
+client.login(process.env.TOKEN);
+
 var fs = require('fs');
 
 const path = require("path");
@@ -90,7 +92,7 @@ module.exports = async (request, response) => {
 
           client.on('message', message => {
 
-            const exampleEmbed = new MessageEmbed()
+           /* const exampleEmbed = new MessageEmbed()
                 .setColor('#0099ff')
                 .setTitle(`capy ${message.data.options[0].value} Rank ${(found+1)}/3333`)
                 .addFields(
@@ -107,10 +109,20 @@ module.exports = async (request, response) => {
                 .setTimestamp()
                 .setFooter('by Luis Mata');
 
-                message.channel.send(exampleEmbed);   
+                message.channel.send(exampleEmbed);   */
+
+            const embed = new MessageEmbed()
+                // Set the title of the field
+                .setTitle('A slick little embed')
+                // Set the color of the embed
+                .setColor(0xff0000)
+                // Set the main content of the embed
+                .setDescription('Hello, this is a slick embed!');
+              // Send the embed to the same channel as the message
+              message.channel.send(embed);
                 
           });
-          client.login(process.env.TOKEN);
+
           }
           console.log("Rarity Request");
           break;
