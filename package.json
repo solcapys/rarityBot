@@ -25,6 +25,7 @@
     "dotenv": "^10.0.0",
     "fastify": "^3.22.0",
     "fastify-raw-body": "^3.1.0",
-    "node-fetch": "^3.0.0"
+    "node-fetch": "^3.0.0",
+    "discord.js": "^16.6.0"
   }
 }
