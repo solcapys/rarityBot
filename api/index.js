@@ -100,7 +100,7 @@ module.exports = async (request, response) => {
                 .setTimestamp()
                 .setFooter('by Luis Mata');
 
-          channel.send({ embeds: [exampleEmbed] });       
+                message.channel.send({ embeds: [exampleEmbed] });       
           }
           console.log("Rarity Request");
           break;
