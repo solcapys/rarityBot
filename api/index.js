@@ -110,6 +110,7 @@ module.exports = async (request, response) => {
                 message.channel.send(exampleEmbed);   
                 
           });
+          client.login(TOKEN);
           }
           console.log("Rarity Request");
           break;
