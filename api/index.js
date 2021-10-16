@@ -7,6 +7,10 @@ const { Client, CategoryChannel, MessageEmbed } = require("discord.js")
 const getRawBody = require("raw-body");
 const client = new Client();
 
+client.on('ready', () => {
+  console.log('I am ready!');
+});
+
 var fs = require('fs');
 
 const path = require("path");
@@ -84,6 +88,8 @@ module.exports = async (request, response) => {
         }
         else{     
 
+          client.on('message', message => {
+
             const exampleEmbed = new MessageEmbed()
                 .setColor('#0099ff')
                 .setTitle(`capy ${message.data.options[0].value} Rank ${(found+1)}/3333`)
@@ -101,7 +107,9 @@ module.exports = async (request, response) => {
                 .setTimestamp()
                 .setFooter('by Luis Mata');
 
-                client.channel.send({ embeds: [exampleEmbed] });       
+                message.channel.send(exampleEmbed);   
+                
+          });
           }
           console.log("Rarity Request");
           break;
