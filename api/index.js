@@ -5,6 +5,7 @@ const {
 } = require("discord-interactions");
 const { Client, CategoryChannel, MessageEmbed } = require("discord.js")
 const getRawBody = require("raw-body");
+const client = new Client();
 
 var fs = require('fs');
 
@@ -100,7 +101,7 @@ module.exports = async (request, response) => {
                 .setTimestamp()
                 .setFooter('by Luis Mata');
 
-                message.channel.send({ embeds: [exampleEmbed] });       
+                client.channel.send({ embeds: [exampleEmbed] });       
           }
           console.log("Rarity Request");
           break;
