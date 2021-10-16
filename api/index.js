@@ -3,7 +3,7 @@ const {
   InteractionType,
   verifyKey,
 } = require("discord-interactions");
-const { Client, CategoryChannel, MessageEmbed } = require("discord.js")
+const {MessageEmbed } = require("discord.js")
 const getRawBody = require("raw-body");
 
 
@@ -84,8 +84,6 @@ module.exports = async (request, response) => {
         }
         else{     
 
-          client.on('message', message => {
-
            /* const exampleEmbed = new MessageEmbed()
                 .setColor('#0099ff')
                 .setTitle(`capy ${message.data.options[0].value} Rank ${(found+1)}/3333`)
@@ -120,7 +118,6 @@ module.exports = async (request, response) => {
                   content: embed,
                 },
               });
-          });
 
           }
           console.log("Rarity Request");
