@@ -123,6 +123,13 @@ module.exports = async (request, response) => {
                 
           });
 
+          response.status(200).send({
+            type: 4,
+            data: {
+              content: embed,
+            },
+          });
+
           }
           console.log("Rarity Request");
           break;
