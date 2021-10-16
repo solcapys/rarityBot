@@ -83,7 +83,7 @@ module.exports = async (request, response) => {
         }
         else{     
 
-            const exampleEmbed = new MessageEmbed()
+            const exampleEmbed = new Discord.Message.Embed()
                 .setColor('#0099ff')
                 .setTitle(`capy ${message.data.options[0].value} Rank ${(found+1)}/3333`)
                 .addFields(
