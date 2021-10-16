@@ -120,15 +120,17 @@ module.exports = async (request, response) => {
                 .setDescription('Hello, this is a slick embed!');
               // Send the embed to the same channel as the message
               message.channel.send(embed);
+
+              response.status(200).send({
+                type: 4,
+                data: {
+                  content: embed,
+                },
+              });
                 
           });
 
-          response.status(200).send({
-            type: 4,
-            data: {
-              content: embed,
-            },
-          });
+          
 
           }
           console.log("Rarity Request");
